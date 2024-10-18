@@ -1,2 +1,2 @@
-# ponderadas
-Para atividades ponderadas
+# Ponderadas - Inteli
+Aqui ficam todas as atividades ponderadas realizadas. 

@@ -1,7 +1,7 @@
 // Define as portas lógicas
-#define RED_PIN 5 
-#define YELLOW_PIN 6
-#define GREEN_PIN 7
+short int RED_PIN = 5;
+short int YELLOW_PIN = 6;
+short int GREEN_PIN = 7;
 
 
 class Semaforo{
@@ -11,10 +11,10 @@ class Semaforo{
     short int GREEN; // Pino Verde
   public:
     // Constructor
-    Semaforo(int pinoR, int pinoY, int pinoG){
-      this->RED = pinoR;
-      this->YELLOW = pinoY;
-      this->GREEN = pinoG;
+    Semaforo(int* pinoR, int* pinoY, int* pinoG){
+      this->RED = &pinoR;
+      this->YELLOW = &pinoY;
+      this->GREEN = &pinoG;
       init();
     }
 
@@ -62,11 +62,11 @@ class Semaforo{
 
 };
 
-Semaforo semaforo(RED_PIN, YELLOW_PIN, GREEN_PIN); // Instancia o objeto
-
 void setup() {
-  //
+  
 }
+
+Semaforo semaforo(&RED_PIN, &YELLOW_PIN, &GREEN_PIN); // Instancia o objeto
 
 void loop() {
   semaforo.ligar(); // Realiza o ciclo completo
